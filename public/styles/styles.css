@@ -62,6 +62,8 @@ body {
   border: solid 5px white; }
   .col-1-2:hover {
     border: solid 5px #F38018; }
+    .col-1-2:hover h2 {
+      color: #A8301D; }
   @media screen and (max-width: 770px) {
     .col-1-2 {
       width: 100%;

@@ -66,6 +66,10 @@ $pad: 12px;
 
   &:hover {
     border: solid 5px #F38018;
+
+    h2 {
+      color: #A8301D;
+    }
   }
 
   @media screen and (max-width: 770px) {
@@ -86,6 +90,7 @@ $pad: 12px;
     font-family: 'Oswald', sans-serif;
     @include fastenate_font(1.4em, 400);
     margin-bottom: 12px;
+
   }
 
   span {
