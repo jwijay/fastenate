@@ -1,2 +1,148 @@
-body h1 {
-  background-color: #fff; }
+@charset "UTF-8";
+@import url(http://fonts.googleapis.com/css?family=Lato|Oswald);
+/* Eric Meyer's Reset CSS v2.0 - http://cssreset.com */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  margin: 0;
+  padding: 0; }
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after, q:before, q:after {
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+html {
+  font-size: 18px; }
+
+body {
+  background-image: url('/assets/bg.jpg');
+  font-family: 'Lato', sans-serif;
+  font-size: 1em;
+  font-weight: 400;
+  color: #2C2C2E; }
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+.grid:after {
+  content: "";
+  display: table;
+  clear: both; }
+
+[class*='col-'] {
+  float: left;
+  padding-right: 12px; }
+  .grid [class*='col-']:last-of-type {
+    padding-right: 0; }
+
+.col-1-2 {
+  margin: auto;
+  width: 48%;
+  background-color: white;
+  padding: 15px;
+  border: solid 5px white; }
+  .col-1-2:hover {
+    border: solid 5px #F38018; }
+  @media screen and (max-width: 770px) {
+    .col-1-2 {
+      width: 100%;
+      height: auto;
+      margin-bottom: 12px; } }
+  .col-1-2 .image {
+    height: 248px;
+    background-image: url('http://placepu.gs/400/200');
+    background-size: cover;
+    margin-bottom: 18px; }
+  .col-1-2 h2 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.4em;
+    font-weight: 400;
+    color: #2C2C2E;
+    margin-bottom: 12px; }
+  .col-1-2 span {
+    font-size: 1em;
+    font-weight: 400;
+    color: #6E6F72;
+    display: inline-block;
+    padding-right: 8px; }
+    .col-1-2 span:nth-of-type(n+2):before {
+      content: '•';
+      padding-right: 8px; }
+  .col-1-2 p {
+    margin-top: 20px; }
+
+.grid-pad {
+  padding: 12px 12px 0; }
+
+/*
+  LAYOUT SPECIFIC JUNK
+ */
+header {
+  background-color: white;
+  text-transform: uppercase; }
+  header .row {
+    content: "";
+    display: table;
+    clear: both;
+    width: 100%;
+    height: 65px; }
+    header .row .logo {
+      float: left;
+      background-image: url('/assets/logo.svg');
+      height: 100%;
+      width: 28%;
+      background-repeat: no-repeat;
+      background-position: 8px 4px; }
+    header .row .add-icon {
+      font-size: 2em;
+      font-weight: 400;
+      color: #A6301D;
+      float: right;
+      padding: 0 3px 2px;
+      line-height: .7em;
+      margin: 18px 18px 0;
+      border: solid 1px #EF6C43; }
+      header .row .add-icon:hover {
+        color: white;
+        background-color: #EB4220; }
+  header nav {
+    background-color: #2C2C2E;
+    font-family: 'Oswald', sans-serif;
+    font-size: 1em;
+    font-weight: 400;
+    color: #6E6F72; }
+    header nav ul {
+      text-align: center; }
+      header nav ul li {
+        display: inline-block;
+        margin: auto;
+        padding: 13px 0;
+        border-right: solid 1px #6E6F72;
+        width: 32%; }
+        header nav ul li:last-of-type {
+          border-right: none; }
+
+a {
+  text-decoration: none;
+  color: #6E6F72; }
+  a:hover {
+    color: #EB4220; }
