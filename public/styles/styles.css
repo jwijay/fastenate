@@ -36,7 +36,8 @@ body {
   font-family: 'Lato', sans-serif;
   font-size: 1em;
   font-weight: 400;
-  color: #2C2C2E; }
+  color: #2C2C2E;
+  line-height: 1em; }
 
 * {
   -webkit-box-sizing: border-box;
@@ -47,12 +48,16 @@ body {
   content: "";
   display: table;
   clear: both; }
+.grid .row {
+  content: "";
+  display: table;
+  clear: both;
+  margin: auto; }
 
-[class*='col-'] {
-  float: left;
-  padding-right: 12px; }
-  .grid [class*='col-']:last-of-type {
-    padding-right: 0; }
+.row [class*='col-']:last-of-type {
+  margin-right: 0; }
+.row:last-of-type [class*='col-'] {
+  margin-bottom: 0; }
 
 .col-1-2 {
   margin: auto;
@@ -64,36 +69,62 @@ body {
     border: solid 5px #F38018; }
     .col-1-2:hover h2 {
       color: #A8301D; }
-  @media screen and (max-width: 770px) {
+  @media screen and (max-width: 759px) {
     .col-1-2 {
       width: 100%;
       height: auto;
       margin-bottom: 12px; } }
+  @media screen and (min-width: 760px) {
+    .col-1-2 {
+      width: 320px;
+      height: 400px;
+      margin-bottom: 20px;
+      float: left;
+      margin-right: 20px; } }
   .col-1-2 .image {
     height: 248px;
     background-image: url('http://placepu.gs/400/200');
     background-size: cover;
     margin-bottom: 18px; }
+    @media screen and (min-width: 760px) {
+      .col-1-2 .image {
+        height: 170px; } }
   .col-1-2 h2 {
     font-family: 'Oswald', sans-serif;
     font-size: 1.4em;
     font-weight: 400;
     color: #2C2C2E;
+    line-height: 1em;
     margin-bottom: 12px; }
+    @media screen and (min-width: 760px) {
+      .col-1-2 h2 {
+        font-size: 1.1em;
+        line-height: 1.4em;
+        margin-bottom: 0; } }
   .col-1-2 span {
     font-size: 1em;
     font-weight: 400;
     color: #6E6F72;
+    line-height: 1em;
     display: inline-block;
     padding-right: 8px; }
     .col-1-2 span:nth-of-type(n+2):before {
       content: '•';
       padding-right: 8px; }
+    @media screen and (min-width: 760px) {
+      .col-1-2 span {
+        font-size: .8em; } }
   .col-1-2 p {
     margin-top: 20px; }
+    @media screen and (min-width: 760px) {
+      .col-1-2 p {
+        font-size: .8em; } }
 
 .grid-pad {
   padding: 12px 12px 0; }
+  @media screen and (min-width: 760px) {
+    .grid-pad {
+      padding: 40px; } }
 
 /*
   LAYOUT SPECIFIC JUNK
@@ -111,13 +142,20 @@ header {
       float: left;
       background-image: url('/assets/logo.svg');
       height: 100%;
-      width: 28%;
+      width: 100%;
       background-repeat: no-repeat;
       background-position: 8px 4px; }
+      @media screen and (min-width: 760px) {
+        header .row .logo {
+          background-image: url('/assets/logo.svg'), url('/assets/header_bg.svg');
+          margin: auto;
+          float: none;
+          background-position: center 4px, center center; } }
     header .row .add-icon {
       font-size: 2em;
       font-weight: 400;
       color: #A6301D;
+      line-height: 1em;
       float: right;
       padding: 0 3px 2px;
       line-height: .7em;
@@ -131,7 +169,8 @@ header {
     font-family: 'Oswald', sans-serif;
     font-size: 1em;
     font-weight: 400;
-    color: #6E6F72; }
+    color: #6E6F72;
+    line-height: 1em; }
     header nav ul {
       text-align: center; }
       header nav ul li {
@@ -140,8 +179,41 @@ header {
         padding: 13px 0;
         border-right: solid 1px #6E6F72;
         width: 32%; }
+        @media screen and (min-width: 760px) {
+          header nav ul li {
+            border-right: none;
+            width: auto; }
+            header nav ul li:nth-of-type(n+2):before {
+              content: '•';
+              padding: 0 8px 0 4px; } }
         header nav ul li:last-of-type {
           border-right: none; }
+
+@media screen and (min-width: 820px) {
+  footer {
+    height: 52px;
+    background-color: #2C2C2E;
+    text-align: center;
+    padding: 12px 0; }
+    footer .facebook-icon {
+      display: inline-block;
+      background-image: url('/assets/facebook_grey.svg');
+      background-size: 24px auto;
+      height: 24px;
+      width: 24px;
+      background-repeat: no-repeat;
+      margin-right: 12px; }
+      footer .facebook-icon:hover {
+        background-image: url('/assets/facebook_orange.svg'); }
+    footer .instagram-icon {
+      display: inline-block;
+      background-image: url('/assets/instagram_grey.svg');
+      background-size: 24px auto;
+      height: 24px;
+      width: 24px;
+      background-repeat: no-repeat; }
+      footer .instagram-icon:hover {
+        background-image: url('/assets/instagram_orange.svg'); } }
 
 a {
   text-decoration: none;

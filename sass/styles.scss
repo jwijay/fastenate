@@ -5,6 +5,7 @@
   font-size: $font-size;
   font-weight: $font-weight;
   color: $font-color;
+  line-height: 1em;
 }
 
 @mixin box-sizing($box-model) {
@@ -34,6 +35,10 @@ body {
 }
 
 $pad: 12px;
+$small: 759px;
+$medium-min: 760px;
+$medium-max: 819px;
+$large: 820px;
 
 .grid {
   // background: red;
@@ -44,15 +49,25 @@ $pad: 12px;
   &:after {
     @include clearfix();
   }
+
+  .row {
+    @include clearfix();
+    margin: auto;
+    // max-width: 800px;
+  }
 }
 
 [class*='col-'] {
-  float: left;
-  padding-right: $pad;
+  // float: left;
+  // padding-right: $pad;
   
-  .grid &:last-of-type {
-    padding-right: 0;
+  .row &:last-of-type {
+    margin-right: 0;
 
+  }
+
+  .row:last-of-type & {
+    margin-bottom: 0;
   }
 }
 
@@ -72,11 +87,18 @@ $pad: 12px;
     }
   }
 
-  @media screen and (max-width: 770px) {
+  @media screen and (max-width: $small) {
     width: 100%;
     height: auto;
     margin-bottom: $pad;
+  }
 
+  @media screen and (min-width: $medium-min) {
+    width: 320px;
+    height: 400px;
+    margin-bottom: 20px;
+    float: left;
+    margin-right: 20px;
   }
 
   .image {
@@ -84,6 +106,10 @@ $pad: 12px;
     background-image: url('http://placepu.gs/400/200');
     background-size: cover;
     margin-bottom: 18px;
+
+    @media screen and (min-width: $medium-min) {
+      height: 170px;
+    }
   }
 
   h2 {
@@ -91,6 +117,11 @@ $pad: 12px;
     @include fastenate_font(1.4em, 400);
     margin-bottom: 12px;
 
+    @media screen and (min-width: $medium-min) {
+      font-size: 1.1em;
+      line-height: 1.4em;
+      margin-bottom: 0;
+    }
   }
 
   span {
@@ -102,15 +133,28 @@ $pad: 12px;
       content: '•';
       padding-right: 8px;
     }
+
+    @media screen and (min-width: $medium-min) {
+      font-size: .8em;
+    }
+
   }
 
   p {
     margin-top: 20px;
+
+    @media screen and (min-width: $medium-min) {
+      font-size: .8em;
+    }
   }
 }
 
 .grid-pad {
   padding: $pad $pad 0;
+
+  @media screen and (min-width: $medium-min) {
+    padding: 40px;
+  }
   // padding: $pad 0 $pad $pad;
 
   // [class*='col-']:last-of-type {
@@ -135,9 +179,16 @@ header {
       float: left;
       background-image: url('/assets/logo.svg');
       height: 100%;
-      width: 28%;
+      width: 100%;
       background-repeat: no-repeat;
       background-position: 8px 4px;
+
+      @media screen and (min-width: $medium-min) {
+        background-image: url('/assets/logo.svg'), url('/assets/header_bg.svg');
+        margin: auto;
+        float: none;
+        background-position: center 4px, center center;
+      }
     }
 
     .add-icon {
@@ -170,13 +221,59 @@ header {
         border-right: solid 1px #6E6F72;
         width: 32%;
 
+        @media screen and (min-width: $medium-min) {
+          border-right: none;
+          width: auto;
+
+          &:nth-of-type(n+2):before {
+            content: '•';
+            padding: 0 8px 0 4px;
+          }
+        }
+
         &:last-of-type {
           border-right: none;
         }
+
       }
     }
   }
+}
 
+footer {
+  @media screen and (min-width: $large) {
+    height: 52px;
+    background-color: #2C2C2E;
+    text-align: center;
+    padding: 12px 0;
+
+    .facebook-icon {
+      display: inline-block;
+      background-image: url('/assets/facebook_grey.svg');
+      background-size: 24px auto;
+      height: 24px;
+      width: 24px;
+      background-repeat: no-repeat;
+      margin-right: 12px;
+
+      &:hover {
+        background-image: url('/assets/facebook_orange.svg');
+      }
+    }
+
+    .instagram-icon {
+      display: inline-block;
+      background-image: url('/assets/instagram_grey.svg');
+      background-size: 24px auto;
+      height: 24px;
+      width: 24px;
+      background-repeat: no-repeat;
+
+      &:hover {
+        background-image: url('/assets/instagram_orange.svg');
+      }
+    }
+  }
 }
 
 a {
