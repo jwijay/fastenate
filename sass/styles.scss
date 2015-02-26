@@ -37,10 +37,12 @@ body {
 $pad: 12px;
 $small: 759px;
 $medium-min: 760px;
-$medium-max: 819px;
-$large: 820px;
+$medium-max: 999px;
+$large: 1000px;
 
 .grid {
+  @include clearfix();
+  margin: auto;
   // background: red;
   // margin: 0 0 $pad 0;
 
@@ -66,8 +68,12 @@ $large: 820px;
 
   }
 
-  .row:last-of-type & {
-    margin-bottom: 0;
+  @media screen and (min-width: $medium-min) {
+
+    .row:last-of-type & {
+      margin-bottom: 0;
+    }
+
   }
 }
 
@@ -116,10 +122,14 @@ $large: 820px;
     font-family: 'Oswald', sans-serif;
     @include fastenate_font(1.4em, 400);
     margin-bottom: 12px;
+    max-height: 2.5em;
+    line-height: 1.2em;
+    overflow: hidden;
 
     @media screen and (min-width: $medium-min) {
       font-size: 1.1em;
       line-height: 1.4em;
+      max-height: 2.8em;
       margin-bottom: 0;
     }
   }
