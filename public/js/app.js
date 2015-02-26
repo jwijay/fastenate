@@ -1,15 +1,6 @@
-// var http = require('http');
-
-// http.get("http://app.rainlocal.com:8080/v1/rain/about", function(res) {
-//   res.on("data", function(chunk) {
-//     chunk = JSON.parse(chunk);
-//     defaultResponse = chunk.response.about;
-//     // console.log(defaultResponse);
-    
-//   });
-// });
-
-// console.log(defaultResponse);
+function createMoment(unixTime) {
+  return moment.duration(moment.unix(unixTime)).humanize() + ' ago';
+}
 
 function renderBox(article_data) {
   var box = $('<div>', {'class' : 'col-1-2'});
@@ -26,11 +17,9 @@ function renderBox(article_data) {
       html: 'by ' + article_data.author
     });
 
-  var timestamp = moment(article_data.created, 'X').fromNow();
-  console.log(article_data.created);
   var created = $('<span>', 
     {
-      html: timestamp  //TODO: use moment.js
+      html: createMoment(article_data.created)
     });
 
   var score = $('<span>', 
