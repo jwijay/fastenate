@@ -1,5 +1,5 @@
 function createMoment(unixTime) {
-  return moment.duration(moment.unix(unixTime)).humanize() + ' ago';
+  return moment.unix(unixTime).fromNow();
 }
 
 function renderBox(article_data) {
