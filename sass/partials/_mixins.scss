@@ -1,0 +1,18 @@
+@mixin fastenate_font($font-size: 1em, $font-weight: 400, $font-color: #2C2C2E) {
+  font-size: $font-size;
+  font-weight: $font-weight;
+  color: $font-color;
+  line-height: 1em;
+}
+
+@mixin box-sizing($box-model) {
+  -webkit-box-sizing: $box-model; // Safari <= 5
+     -moz-box-sizing: $box-model; // Firefox <= 19
+          box-sizing: $box-model;
+}
+
+@mixin clearfix() {
+    content: "";
+    display: table;
+    clear: both;
+}
