@@ -1,24 +1,6 @@
-@import 'reset';
-@import url(http://fonts.googleapis.com/css?family=Lato|Oswald);
+@import "partials/reset";
+@import "partials/mixins";
 
-@mixin fastenate_font($font-size: 1em, $font-weight: 400, $font-color: #2C2C2E) {
-  font-size: $font-size;
-  font-weight: $font-weight;
-  color: $font-color;
-  line-height: 1em;
-}
-
-@mixin box-sizing($box-model) {
-  -webkit-box-sizing: $box-model; // Safari <= 5
-     -moz-box-sizing: $box-model; // Firefox <= 19
-          box-sizing: $box-model;
-}
-
-@mixin clearfix() {
-    content: "";
-    display: table;
-    clear: both;
-}
 
 html {
   font-size: 18px;
@@ -43,10 +25,6 @@ $large: 1000px;
 .grid {
   @include clearfix();
   margin: auto;
-  // background: red;
-  // margin: 0 0 $pad 0;
-
-
 
   &:after {
     @include clearfix();
@@ -55,13 +33,10 @@ $large: 1000px;
   .row {
     @include clearfix();
     margin: auto;
-    // max-width: 800px;
   }
 }
 
-[class*='col-'] {
-  // float: left;
-  // padding-right: $pad;
+.box {
   
   .row &:last-of-type {
     margin-right: 0;
@@ -75,12 +50,9 @@ $large: 1000px;
     }
 
   }
-}
 
-.col-1-2 {
   margin: auto;
   width: 48%;
-  // height: 303px;
   background-color: white;
   padding: 15px;
   border: solid 5px white;
@@ -165,11 +137,6 @@ $large: 1000px;
   @media screen and (min-width: $medium-min) {
     padding: 40px;
   }
-  // padding: $pad 0 $pad $pad;
-
-  // [class*='col-']:last-of-type {
-  //   padding-right: $pad;
-  // }
 }
 
 /*

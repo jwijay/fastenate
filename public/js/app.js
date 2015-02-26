@@ -3,7 +3,7 @@ function createMoment(unixTime) {
 }
 
 function renderBox(article_data) {
-  var box = $('<div>', {'class' : 'col-1-2'});
+  var box = $('<div>', {'class' : 'box'});
   var image = $('<div>', {'class' : 'image'});
   image.css('background-image', "url('" + article_data.url + "')");
 
