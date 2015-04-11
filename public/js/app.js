@@ -70,17 +70,17 @@ function renderData(data) {
 
 $('#my_boards').on('click', function(event) {
   event.preventDefault();
-  $.get("/api/my_boards.json", renderData);
+  $.get("http://www.reddit.com/r/spaceporn.json", renderData);
 });
 
 $('#random').on('click', function(event) {
   event.preventDefault();
-  $.get("/api/random.json", renderData);
+  $.get("http://www.reddit.com/r/AdventureTime.json", renderData);
 });
 
 $('#get_the_app').on('click', function(event) {
   event.preventDefault();
-  $.get("/api/get_the_app.json", renderData);
+  $.get("http://www.reddit.com/r/pics.json", renderData);
 });
 
 $(function() {
