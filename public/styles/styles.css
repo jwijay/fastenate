@@ -1,0 +1,230 @@
+@charset "UTF-8";
+/* Eric Meyer's Reset CSS v2.0 - http://cssreset.com */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  margin: 0;
+  padding: 0; }
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after, q:before, q:after {
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+html {
+  font-size: 18px; }
+
+body {
+  background-image: url('/assets/bg.jpg');
+  font-family: 'Lato', sans-serif;
+  font-size: 1em;
+  font-weight: 400;
+  color: #2C2C2E;
+  line-height: 1em; }
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+.grid {
+  content: "";
+  display: table;
+  clear: both;
+  margin: auto; }
+  .grid:after {
+    content: "";
+    display: table;
+    clear: both; }
+  .grid .row {
+    content: "";
+    display: table;
+    clear: both;
+    margin: auto; }
+
+.box {
+  margin: auto;
+  width: 48%;
+  background-color: white;
+  padding: 15px;
+  border: solid 5px white; }
+  .row .box:last-of-type {
+    margin-right: 0; }
+  @media screen and (min-width: 760px) {
+    .row:last-of-type .box {
+      margin-bottom: 0; } }
+  .box:hover {
+    border: solid 5px #F38018; }
+    .box:hover h2 {
+      color: #A8301D; }
+  @media screen and (max-width: 759px) {
+    .box {
+      width: 100%;
+      height: auto;
+      margin-bottom: 12px; } }
+  @media screen and (min-width: 760px) {
+    .box {
+      width: 320px;
+      height: 400px;
+      margin-bottom: 20px;
+      float: left;
+      margin-right: 20px; } }
+  .box .image {
+    height: 248px;
+    background-image: url('http://placepu.gs/400/200');
+    background-size: cover;
+    margin-bottom: 18px; }
+    @media screen and (min-width: 760px) {
+      .box .image {
+        height: 170px; } }
+  .box h2 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.4em;
+    font-weight: 400;
+    color: #2C2C2E;
+    line-height: 1em;
+    margin-bottom: 12px;
+    max-height: 2.5em;
+    line-height: 1.2em;
+    overflow: hidden; }
+    @media screen and (min-width: 760px) {
+      .box h2 {
+        font-size: 1.1em;
+        line-height: 1.4em;
+        max-height: 2.8em;
+        margin-bottom: 0; } }
+  .box span {
+    font-size: 1em;
+    font-weight: 400;
+    color: #6E6F72;
+    line-height: 1em;
+    display: inline-block;
+    padding-right: 8px; }
+    .box span:nth-of-type(n+2):before {
+      content: '•';
+      padding-right: 8px; }
+    @media screen and (min-width: 760px) {
+      .box span {
+        font-size: .8em; } }
+  .box p {
+    margin-top: 20px; }
+    @media screen and (min-width: 760px) {
+      .box p {
+        font-size: .8em; } }
+
+.grid-pad {
+  padding: 12px 12px 0; }
+  @media screen and (min-width: 760px) {
+    .grid-pad {
+      padding: 40px; } }
+
+/*
+  LAYOUT SPECIFIC JUNK
+ */
+header {
+  background-color: white;
+  text-transform: uppercase; }
+  header .row {
+    content: "";
+    display: table;
+    clear: both;
+    width: 100%;
+    height: 65px; }
+    header .row .logo {
+      float: left;
+      background-image: url('/assets/logo.svg');
+      height: 100%;
+      width: 100%;
+      background-repeat: no-repeat;
+      background-position: 8px 4px; }
+      @media screen and (min-width: 760px) {
+        header .row .logo {
+          background-image: url('/assets/logo.svg'), url('/assets/header_bg.svg');
+          margin: auto;
+          float: none;
+          background-position: center 4px, center center; } }
+    header .row .add-icon {
+      font-size: 2em;
+      font-weight: 400;
+      color: #A6301D;
+      line-height: 1em;
+      float: right;
+      padding: 0 3px 2px;
+      line-height: .7em;
+      margin: 18px 18px 0;
+      border: solid 1px #EF6C43; }
+      header .row .add-icon:hover {
+        color: white;
+        background-color: #EB4220; }
+  header nav {
+    background-color: #2C2C2E;
+    font-family: 'Oswald', sans-serif;
+    font-size: 1em;
+    font-weight: 400;
+    color: #6E6F72;
+    line-height: 1em; }
+    header nav ul {
+      text-align: center; }
+      header nav ul li {
+        display: inline-block;
+        margin: auto;
+        padding: 13px 0;
+        border-right: solid 1px #6E6F72;
+        width: 32%; }
+        @media screen and (min-width: 760px) {
+          header nav ul li {
+            border-right: none;
+            width: auto; }
+            header nav ul li:nth-of-type(n+2):before {
+              content: '•';
+              padding: 0 8px 0 4px; } }
+        header nav ul li:last-of-type {
+          border-right: none; }
+
+@media screen and (min-width: 1000px) {
+  footer {
+    height: 52px;
+    background-color: #2C2C2E;
+    text-align: center;
+    padding: 12px 0; }
+    footer .facebook-icon {
+      display: inline-block;
+      background-image: url('/assets/facebook_grey.svg');
+      background-size: 24px auto;
+      height: 24px;
+      width: 24px;
+      background-repeat: no-repeat;
+      margin-right: 12px; }
+      footer .facebook-icon:hover {
+        background-image: url('/assets/facebook_orange.svg'); }
+    footer .instagram-icon {
+      display: inline-block;
+      background-image: url('/assets/instagram_grey.svg');
+      background-size: 24px auto;
+      height: 24px;
+      width: 24px;
+      background-repeat: no-repeat; }
+      footer .instagram-icon:hover {
+        background-image: url('/assets/instagram_orange.svg'); } }
+
+a {
+  text-decoration: none;
+  color: #6E6F72; }
+  a:hover {
+    color: #EB4220; }
