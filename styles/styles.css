@@ -31,7 +31,7 @@ html {
   font-size: 18px; }
 
 body {
-  background-image: url('/assets/bg.jpg');
+  background-image: url('../assets/bg.jpg');
   font-family: 'Lato', sans-serif;
   font-size: 1em;
   font-weight: 400;
@@ -148,14 +148,14 @@ header {
     height: 65px; }
     header .row .logo {
       float: left;
-      background-image: url('/assets/logo.svg');
+      background-image: url('../assets/logo.svg');
       height: 100%;
       width: 100%;
       background-repeat: no-repeat;
       background-position: 8px 4px; }
       @media screen and (min-width: 760px) {
         header .row .logo {
-          background-image: url('/assets/logo.svg'), url('/assets/header_bg.svg');
+          background-image: url('../assets/logo.svg'), url('../assets/header_bg.svg');
           margin: auto;
           float: none;
           background-position: center 4px, center center; } }
@@ -205,23 +205,23 @@ header {
     padding: 12px 0; }
     footer .facebook-icon {
       display: inline-block;
-      background-image: url('/assets/facebook_grey.svg');
+      background-image: url('../assets/facebook_grey.svg');
       background-size: 24px auto;
       height: 24px;
       width: 24px;
       background-repeat: no-repeat;
       margin-right: 12px; }
       footer .facebook-icon:hover {
-        background-image: url('/assets/facebook_orange.svg'); }
+        background-image: url('../assets/facebook_orange.svg'); }
     footer .instagram-icon {
       display: inline-block;
-      background-image: url('/assets/instagram_grey.svg');
+      background-image: url('../assets/instagram_grey.svg');
       background-size: 24px auto;
       height: 24px;
       width: 24px;
       background-repeat: no-repeat; }
       footer .instagram-icon:hover {
-        background-image: url('/assets/instagram_orange.svg'); } }
+        background-image: url('../assets/instagram_orange.svg'); } }
 
 a {
   text-decoration: none;
